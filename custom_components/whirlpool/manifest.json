@@ -9,5 +9,5 @@
   "loggers": ["whirlpool"],
   "quality_scale": "silver",
   "version": "0.1.0-compat131",
-  "requirements": ["whirlpool-sixth-sense==1.3.1.post1"]
+  "requirements": ["whirlpool-sixth-sense@git+https://github.com/aevans0001/whirlpool-sixth-sense.git@compatibility/1.3.1-api144-laundry-controls"]
 }
