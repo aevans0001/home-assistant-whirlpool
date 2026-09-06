@@ -1,4 +1,9 @@
-"""Binary sensors for the Whirlpool Appliances integration."""
+"""Binary sensors for the Whirlpool Appliances integration.
+
+Modified from upstream to add a read-only Remote Control Enable status
+sensor for washers/dryers (see WASHER_DRYER_SENSORS below). This sensor
+has no corresponding way to turn Remote Control on or off from Home
+Assistant - see CHANGES.md in this fork for why."""
 
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -34,7 +39,12 @@ WASHER_DRYER_SENSORS: list[WhirlpoolBinarySensorEntityDescription] = [
         key="door",
         device_class=BinarySensorDeviceClass.DOOR,
         value_fn=lambda appliance: appliance.get_door_open(),
-    )
+    ),
+    WhirlpoolBinarySensorEntityDescription(
+        key="remote_control_enabled",
+        translation_key="remote_control_enabled",
+        value_fn=lambda appliance: appliance.get_remote_control_enabled(),
+    ),
 ]
 
 

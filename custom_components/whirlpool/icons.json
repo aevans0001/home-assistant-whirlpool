@@ -16,6 +16,40 @@
       "washer_state": {
         "default": "mdi:washing-machine"
       }
+    },
+    "binary_sensor": {
+      "remote_control_enabled": {
+        "default": "mdi:remote",
+        "state": {
+          "off": "mdi:remote-off"
+        }
+      }
+    },
+    "button": {
+      "washer_start": {
+        "default": "mdi:play"
+      },
+      "washer_pause": {
+        "default": "mdi:pause"
+      },
+      "washer_resume": {
+        "default": "mdi:play-pause"
+      },
+      "washer_cancel": {
+        "default": "mdi:stop"
+      },
+      "dryer_start": {
+        "default": "mdi:play"
+      },
+      "dryer_pause": {
+        "default": "mdi:pause"
+      },
+      "dryer_resume": {
+        "default": "mdi:play-pause"
+      },
+      "dryer_cancel": {
+        "default": "mdi:stop"
+      }
     }
   }
 }
