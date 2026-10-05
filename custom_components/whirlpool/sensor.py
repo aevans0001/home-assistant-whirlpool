@@ -24,14 +24,16 @@ from homeassistant.components.sensor import (
     SensorStateClass,
 )
 from homeassistant.const import Platform, UnitOfTemperature
-from homeassistant.core import HomeAssistant
+from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers import entity_registry as er
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from homeassistant.helpers.event import async_track_time_interval
 from homeassistant.helpers.typing import StateType
 from homeassistant.util.dt import utcnow
 
 from . import WhirlpoolConfigEntry
 from .entity import WhirlpoolEntity, WhirlpoolOvenEntity
+from .remaining_time import RemainingTimeEstimate, format_remaining_minutes
 from .util import deprecate_entity
 
 PARALLEL_UPDATES = 1
@@ -188,6 +190,14 @@ WASHER_SENSORS: tuple[WhirlpoolSensorEntityDescription, ...] = (
         options=[value for value in WASHER_TANK_FILL.values() if value],
         value_fn=lambda washer: WASHER_TANK_FILL.get(washer.get_dispense_1_level()),
     ),
+    WhirlpoolSensorEntityDescription(
+        key="DispenseLevel2",
+        translation_key="whirlpool_tank_2",
+        entity_registry_enabled_default=False,
+        device_class=SensorDeviceClass.ENUM,
+        options=[value for value in WASHER_TANK_FILL.values() if value],
+        value_fn=lambda washer: WASHER_TANK_FILL.get(washer.get_dispense_2_level()),
+    ),
 )
 
 DRYER_SENSORS: tuple[WhirlpoolSensorEntityDescription, ...] = (
@@ -307,6 +317,10 @@ async def async_setup_entry(
         for description in WASHER_DRYER_TIME_SENSORS
     ]
 
+    washer_remaining_time_sensors = [
+        WasherRemainingTimeSensor(washer) for washer in appliances_manager.washers
+    ]
+
     dryer_sensors = [
         WhirlpoolSensor(dryer, description)
         for dryer in appliances_manager.dryers
@@ -332,6 +346,7 @@ async def async_setup_entry(
         [
             *washer_sensors,
             *washer_time_sensors,
+            *washer_remaining_time_sensors,
             *dryer_sensors,
             *dryer_time_sensors,
             *oven_cavity_sensors,
@@ -439,6 +454,59 @@ class WasherTimeSensor(WhirlpoolTimeSensorBase):
     @override
     def _get_seconds_remaining(self) -> int:
         return self._appliance.get_time_remaining()
+
+
+class WasherRemainingTimeSensor(WhirlpoolEntity, SensorEntity):
+    """Show the washer's estimated remaining time with minute precision."""
+
+    _attr_translation_key = "cycle_time_remaining"
+    _attr_icon = "mdi:timer-outline"
+    _appliance: Washer
+
+    def __init__(self, appliance: Washer) -> None:
+        super().__init__(appliance, unique_id_suffix="-cycle_time_remaining")
+        self._estimate = RemainingTimeEstimate()
+        self._observe_appliance()
+
+    @override
+    async def async_added_to_hass(self) -> None:
+        await super().async_added_to_hass()
+        self.async_on_remove(
+            async_track_time_interval(
+                self.hass, self._async_update_display, timedelta(minutes=1)
+            )
+        )
+        self._observe_appliance()
+
+    def _observe_appliance(self) -> None:
+        state = self._appliance.get_machine_state()
+        if state in {
+            WasherMachineState.RunningMainCycle,
+            WasherMachineState.RunningPostCycle,
+        }:
+            mode = "running"
+        elif state is WasherMachineState.Pause:
+            mode = "paused"
+        elif state is WasherMachineState.Complete:
+            mode = "complete"
+        else:
+            mode = "idle"
+        self._estimate.observe(mode, self._appliance.get_time_remaining(), utcnow())
+
+    @callback
+    @override
+    def _async_attr_callback(self) -> None:
+        self._observe_appliance()
+        super()._async_attr_callback()
+
+    @callback
+    def _async_update_display(self, _now: datetime) -> None:
+        self.async_write_ha_state()
+
+    @property
+    @override
+    def native_value(self) -> str | None:
+        return format_remaining_minutes(self._estimate.minutes(utcnow()))
 
 
 class DryerTimeSensor(WhirlpoolTimeSensorBase):
