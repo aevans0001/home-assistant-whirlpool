@@ -1,0 +1,24 @@
+# Favorite management. Target a washer or dryer "Favorite Cycle" select.
+save_favorite:
+  target:
+    entity:
+      integration: whirlpool
+      domain: select
+  fields:
+    name:
+      required: true
+      example: "Gym Clothes"
+      selector:
+        text:
+
+delete_favorite:
+  target:
+    entity:
+      integration: whirlpool
+      domain: select
+  fields:
+    name:
+      required: true
+      example: "Gym Clothes"
+      selector:
+        text:
