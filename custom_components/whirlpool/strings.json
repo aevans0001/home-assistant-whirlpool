@@ -145,41 +145,283 @@
       },
       "refrigerator_temperature_level": {
         "name": "Temperature level"
+      },
+      "washer_what_to_wash": {
+        "name": "What to wash",
+        "state": {
+          "regular": "Regular",
+          "colors": "Colors",
+          "whites": "Whites",
+          "towels": "Towels",
+          "delicates": "Delicates",
+          "bulky": "Bulky"
+        }
+      },
+      "washer_how_to_wash": {
+        "name": "How to wash",
+        "state": {
+          "normal": "Normal",
+          "quick": "Quick",
+          "wrinkle_control": "Wrinkle control",
+          "heavy_duty": "Heavy duty",
+          "cold_wash": "Cold wash",
+          "sanitize": "Sanitize"
+        }
+      },
+      "washer_dispenser_1_enable": {
+        "name": "Dispenser 1 mode",
+        "state": {
+          "disabled": "Disabled",
+          "enabled": "Enabled",
+          "disabled_next_cycle": "Disabled next cycle"
+        }
+      },
+      "washer_dispenser_2_enable": {
+        "name": "Dispenser 2 mode",
+        "state": {
+          "disabled": "Disabled",
+          "enabled": "Enabled",
+          "disabled_next_cycle": "Disabled next cycle"
+        }
+      },
+      "washer_dispenser_1_concentration": {
+        "name": "Dispenser 1 detergent concentration",
+        "state": {
+          "2x": "2X",
+          "3x": "3X",
+          "4x": "4X",
+          "5x": "5X",
+          "6x": "6X",
+          "8x": "8X"
+        }
+      },
+      "washer_dispenser_2_concentration": {
+        "name": "Dispenser 2 detergent concentration",
+        "state": {
+          "2x": "2X",
+          "3x": "3X",
+          "4x": "4X",
+          "5x": "5X",
+          "6x": "6X",
+          "8x": "8X"
+        }
+      },
+      "washer_dispenser_2_contents": {
+        "name": "Dispenser 2 contents",
+        "state": {
+          "detergent": "Detergent",
+          "softener": "Softener"
+        }
+      },
+      "washer_fan_fresh": {
+        "name": "Fan Fresh",
+        "state": {
+          "off": "Off",
+          "on": "On"
+        }
+      },
+      "washer_steam": {
+        "name": "Steam",
+        "state": {
+          "off": "Off",
+          "on": "On"
+        }
+      },
+      "washer_temperature": {
+        "name": "Wash temperature",
+        "state": {
+          "cold": "Cold",
+          "cool": "Cool",
+          "warm": "Warm",
+          "hot": "Hot",
+          "extra_hot": "Extra Hot"
+        }
+      },
+      "washer_spin_speed": {
+        "name": "Spin speed",
+        "state": {
+          "off": "Off",
+          "low": "Slow",
+          "medium": "Medium",
+          "high": "Fast",
+          "extra_high": "Extra Fast"
+        }
+      },
+      "washer_soil_level": {
+        "name": "Soil level",
+        "state": {
+          "light": "Light",
+          "normal": "Normal",
+          "heavy": "Heavy"
+        }
+      },
+      "washer_extra_rinse": {
+        "name": "Extra rinse",
+        "state": {
+          "off": "Off",
+          "on": "On"
+        }
+      },
+      "washer_presoak": {
+        "name": "Presoak",
+        "state": {
+          "off": "Off",
+          "30_min": "30 minutes",
+          "1_hour": "1 hour",
+          "8_hour": "8 hours"
+        }
+      },
+      "washer_utility_cycle": {
+        "name": "Utility cycle",
+        "state": {
+          "drain_spin": "Drain & Spin",
+          "clean_washer": "Clean Washer with affresh"
+        }
+      },
+      "washer_favorite_cycle": {
+        "name": "Favorite Cycle",
+        "state": {
+          "none": "None"
+        }
+      },
+      "washer_specialty_cycle": {
+        "name": "Specialty Cycle",
+        "state": {
+          "none": "None",
+          "coats_jackets": "Coats & Jackets",
+          "diapers": "Diapers",
+          "sleeping_bags": "Sleeping Bags",
+          "comforters": "Comforters",
+          "machine_wash_curtains": "Machine-Wash Curtains",
+          "swimwear": "Swimwear",
+          "activewear": "Activewear",
+          "jeans": "Jeans",
+          "blankets": "Blankets",
+          "lingerie": "Lingerie",
+          "business_casual": "Business Casual"
+        }
+      },
+      "dryer_wrinkle_shield": {
+        "name": "Wrinkle Shield",
+        "state": {
+          "off": "Off",
+          "on": "On",
+          "on_with_steam": "On with Steam"
+        }
+      },
+      "dryer_what_to_dry": {
+        "name": "What to dry",
+        "state": {
+          "regular": "Regular",
+          "colors": "Colors",
+          "whites": "Whites",
+          "towels": "Towels",
+          "delicates": "Delicates",
+          "bulky": "Bulky"
+        }
+      },
+      "dryer_how_to_dry": {
+        "name": "How to dry",
+        "state": {
+          "normal": "Normal",
+          "quick": "Quick",
+          "wrinkle_control": "Wrinkle control",
+          "heavy_duty": "Heavy duty",
+          "sanitize": "Sanitize",
+          "timed_dry": "Timed dry"
+        }
+      },
+      "dryer_utility_cycle": {
+        "name": "Utility cycle",
+        "state": {
+          "steam_refresh": "Steam Refresh"
+        }
+      },
+      "dryer_dryness": {
+        "name": "Dryness level",
+        "state": {
+          "less": "Less",
+          "normal": "Normal",
+          "more": "More"
+        }
+      },
+      "dryer_temperature": {
+        "name": "Temperature",
+        "state": {
+          "air": "Air only",
+          "cool_low": "Cool low",
+          "cool_mid": "Cool",
+          "warm_mid": "Warm",
+          "hot_mid": "Hot"
+        }
+      },
+      "dryer_static_guard": {
+        "name": "Static Guard",
+        "state": {
+          "off": "Off",
+          "on": "On"
+        }
+      },
+      "dryer_eco_boost": {
+        "name": "Eco Boost",
+        "state": {
+          "off": "Off",
+          "on": "On"
+        }
+      },
+      "dryer_manual_dry_time": {
+        "name": "Manual dry time",
+        "state": {
+          "15": "15 min",
+          "30": "30 min",
+          "45": "45 min",
+          "60": "60 min",
+          "90": "90 min"
+        }
+      },
+      "dryer_favorite_cycle": {
+        "name": "Favorite Cycle",
+        "state": {
+          "none": "None"
+        }
       }
     },
     "sensor": {
       "dryer_state": {
-        "name": "[%key:component::whirlpool::entity::sensor::washer_state::name%]",
+        "name": "State",
         "state": {
-          "complete": "[%key:component::whirlpool::entity::sensor::washer_state::state::complete%]",
-          "customer_focus_mode": "[%key:component::whirlpool::entity::sensor::washer_state::state::customer_focus_mode%]",
-          "cycle_filling": "[%key:component::whirlpool::entity::sensor::washer_state::state::cycle_filling%]",
-          "cycle_rinsing": "[%key:component::whirlpool::entity::sensor::washer_state::state::cycle_rinsing%]",
-          "cycle_sensing": "[%key:component::whirlpool::entity::sensor::washer_state::state::cycle_sensing%]",
-          "cycle_soaking": "[%key:component::whirlpool::entity::sensor::washer_state::state::cycle_soaking%]",
-          "cycle_spinning": "[%key:component::whirlpool::entity::sensor::washer_state::state::cycle_spinning%]",
-          "cycle_washing": "[%key:component::whirlpool::entity::sensor::washer_state::state::cycle_washing%]",
-          "delay_countdown": "[%key:component::whirlpool::entity::sensor::washer_state::state::delay_countdown%]",
-          "delay_paused": "[%key:component::whirlpool::entity::sensor::washer_state::state::delay_paused%]",
-          "demo_mode": "[%key:component::whirlpool::entity::sensor::washer_state::state::demo_mode%]",
-          "exception": "[%key:component::whirlpool::entity::sensor::washer_state::state::exception%]",
-          "factory_diagnostic_mode": "[%key:component::whirlpool::entity::sensor::washer_state::state::factory_diagnostic_mode%]",
-          "hard_stop_or_error": "[%key:component::whirlpool::entity::sensor::washer_state::state::hard_stop_or_error%]",
-          "life_test": "[%key:component::whirlpool::entity::sensor::washer_state::state::life_test%]",
-          "pause": "[%key:common::state::paused%]",
-          "power_failure": "[%key:component::whirlpool::entity::sensor::washer_state::state::power_failure%]",
-          "running_maincycle": "[%key:component::whirlpool::entity::sensor::washer_state::state::running_maincycle%]",
-          "running_postcycle": "[%key:component::whirlpool::entity::sensor::washer_state::state::running_postcycle%]",
-          "service_diagnostic_mode": "[%key:component::whirlpool::entity::sensor::washer_state::state::service_diagnostic_mode%]",
-          "setting": "[%key:component::whirlpool::entity::sensor::washer_state::state::setting%]",
-          "smart_delay": "[%key:component::whirlpool::entity::sensor::washer_state::state::smart_delay%]",
-          "smart_grid_pause": "[%key:component::whirlpool::entity::sensor::washer_state::state::smart_delay%]",
-          "standby": "[%key:common::state::standby%]",
-          "system_initialize": "[%key:component::whirlpool::entity::sensor::washer_state::state::system_initialize%]"
+          "complete": "Complete",
+          "customer_focus_mode": "Customer focus mode",
+          "cycle_filling": "Cycle filling",
+          "cycle_rinsing": "Cycle rinsing",
+          "cycle_sensing": "Cycle sensing",
+          "cycle_soaking": "Cycle soaking",
+          "cycle_spinning": "Cycle spinning",
+          "cycle_washing": "Cycle washing",
+          "delay_countdown": "Delay countdown",
+          "delay_paused": "Delay paused",
+          "demo_mode": "Demo mode",
+          "exception": "Exception",
+          "factory_diagnostic_mode": "Factory diagnostic mode",
+          "hard_stop_or_error": "Hard stop or error",
+          "life_test": "Life test",
+          "pause": "Paused",
+          "power_failure": "Power failure",
+          "running_maincycle": "Running maincycle",
+          "running_postcycle": "Running postcycle",
+          "service_diagnostic_mode": "Service diagnostic mode",
+          "setting": "Setting",
+          "smart_delay": "Smart delay",
+          "smart_grid_pause": "Smart grid pause",
+          "standby": "Standby",
+          "system_initialize": "System initialize"
         }
       },
       "end_time": {
         "name": "End time"
+      },
+      "cycle_time_remaining": {
+        "name": "Cycle time remaining"
       },
       "oven_cook_mode": {
         "name": "Cook mode",
@@ -280,20 +522,31 @@
           "factory_diagnostic_mode": "Factory diagnostic mode",
           "hard_stop_or_error": "Hard stop or error",
           "life_test": "Life test",
-          "pause": "[%key:common::state::paused%]",
+          "pause": "Paused",
           "power_failure": "Power failure",
           "running_maincycle": "Running maincycle",
           "running_postcycle": "Running postcycle",
           "service_diagnostic_mode": "Service diagnostic mode",
           "setting": "Setting",
           "smart_delay": "Smart delay",
-          "smart_grid_pause": "[%key:component::whirlpool::entity::sensor::washer_state::state::smart_delay%]",
-          "standby": "[%key:common::state::standby%]",
+          "smart_grid_pause": "Smart grid pause",
+          "standby": "Standby",
           "system_initialize": "System initialize"
         }
       },
       "whirlpool_tank": {
         "name": "Detergent level",
+        "state": {
+          "25": "25%",
+          "50": "50%",
+          "100": "100%",
+          "active": "[%key:common::state::active%]",
+          "empty": "[%key:common::state::empty%]",
+          "unknown": "Unknown"
+        }
+      },
+      "whirlpool_tank_2": {
+        "name": "Dispenser 2 level",
         "state": {
           "25": "25%",
           "50": "50%",
@@ -334,6 +587,18 @@
     },
     "invalid_machine_state_for_command": {
       "message": "{device_name} is not in a state that allows this command right now."
+    },
+    "favorite_name_invalid": {
+      "message": "Enter a Favorite name between 1 and 50 characters. \"None\" cannot be used."
+    },
+    "favorite_unsupported_cycle": {
+      "message": "The current cycle cannot be saved as a Favorite. Select a What/How cycle first."
+    },
+    "favorite_not_found": {
+      "message": "No saved Favorite has that name."
+    },
+    "not_a_favorite_select": {
+      "message": "Target a washer or dryer Favorite Cycle entity."
     }
   },
   "issues": {
@@ -352,6 +617,28 @@
     "deprecated_oven_target_temperature_scripts": {
       "description": "The `{entity_id}` ({entity_name}) sensor is deprecated and has been replaced by the **Target temperature** number entity, which can both read and change the oven target temperature.\n\nIt is still used in the following automations or scripts:\n{items}\n\nUpdate them to use the new number entity, then disable `{entity_id}` to have it removed.",
       "title": "[%key:component::whirlpool::issues::deprecated_oven_target_temperature::title%]"
+    }
+  },
+  "services": {
+    "save_favorite": {
+      "name": "Save Favorite",
+      "description": "Saves the appliance's current cycle configuration as a Home Assistant Favorite. Nothing is sent to the appliance. A saved Favorite with the same name is replaced.",
+      "fields": {
+        "name": {
+          "name": "Favorite name",
+          "description": "Name to show in the Favorite Cycle list."
+        }
+      }
+    },
+    "delete_favorite": {
+      "name": "Delete Favorite",
+      "description": "Deletes any saved Home Assistant Favorite, including the optional starter example.",
+      "fields": {
+        "name": {
+          "name": "Favorite name",
+          "description": "Name of the saved Favorite to delete."
+        }
+      }
     }
   }
 }
