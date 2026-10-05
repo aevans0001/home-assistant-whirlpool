@@ -31,12 +31,13 @@ async def async_setup_entry(
 ) -> None:
     """Set up the number platform."""
     appliances_manager = config_entry.runtime_data
-    async_add_entities(
+    entities: list[NumberEntity] = [
         WhirlpoolOvenTargetTemperature(oven, cavity)
         for oven in appliances_manager.ovens
         for cavity in (OvenCavity.Upper, OvenCavity.Lower)
         if oven.get_oven_cavity_exists(cavity)
-    )
+    ]
+    async_add_entities(entities)
 
 
 class WhirlpoolOvenTargetTemperature(WhirlpoolOvenEntity, NumberEntity):
