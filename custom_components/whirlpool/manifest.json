@@ -9,6 +9,6 @@
   "loggers": ["whirlpool"],
   "quality_scale": "silver",
   "requirements": [
-    "whirlpool-sixth-sense@git+https://github.com/aevans0001/whirlpool-legacy-library.git@31df15f58940016ecc07a6e1ab79ccd3e7336cbe"
+    "whirlpool-sixth-sense@git+https://github.com/aevans0001/whirlpool-sixth-sense.git@70020de049ed869e8f51aa59a3ca167b3a7aedfa"
   ]
 }
