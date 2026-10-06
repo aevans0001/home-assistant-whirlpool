@@ -1,13 +1,14 @@
 {
   "domain": "whirlpool",
-  "name": "Whirlpool Appliances (Laundry Control Fork - HA 2026.8.3 compat)",
+  "name": "Whirlpool Appliances",
   "codeowners": ["@abmantis", "@mkmer"],
   "config_flow": true,
-  "documentation": "https://github.com/abmantis/whirlpool-sixth-sense",
+  "documentation": "https://www.home-assistant.io/integrations/whirlpool",
   "integration_type": "hub",
   "iot_class": "cloud_push",
   "loggers": ["whirlpool"],
   "quality_scale": "silver",
-  "version": "0.1.0-compat131",
-  "requirements": ["whirlpool-sixth-sense@git+https://github.com/aevans0001/whirlpool-sixth-sense.git@compatibility/1.3.1-api144-laundry-controls"]
+  "requirements": [
+    "whirlpool-sixth-sense@git+https://github.com/aevans0001/whirlpool-legacy-library.git@31df15f58940016ecc07a6e1ab79ccd3e7336cbe"
+  ]
 }
